@@ -83,43 +83,43 @@ Tutoriel F2L avancés
 
 05-Methode intermediaire fridrich simplifier {
 	Les 7 OLL : oll cross ou 2look oll
-		Y
-		XGXY
-		GGG
-		GGX
-		  Y
-		- R U R' U R U2 R'
-		YXGG
-		 GGG
-		 XGXY
-		 Y
-		- R U2 R' U' R U' R'
-		GGG
-		GGG
-		XGX
-		Y Y
-		- R2 D R' U2 R D' R' U2 R'
-		 GGG
-		 GGG
-		YXGXY
-		- x' R U R' D R U' R' D'
-		Y
-		XGG
-		GGG
-		GGXY
-		- x' R U' R' D R U R' D'
-		Y Y
-		XGX
-		GGG
-		XGX
-		Y Y
-		- F (R U R' U') (R U R' U') (R U R' U') F'
-		   Y
-		YXGX
-		 GGG
-		YXGX
-		   Y
-		- R U2 R2' U' R2 U' R2' U2 R
+		   YY
+		   XX GG XX YY
+		   GG GG GG		- R U R' U R U2 R'
+		   GG GG XX
+		         YY
+		
+		YY XX GG GG
+		   GG GG GG		- R U2 R' U' R U' R'
+		   XX GG XX YY
+		   YY
+		
+		   GG GG GG
+		   GG GG GG		- R2 D R' U2 R D' R' U2 R'
+		   XX GG XX
+		   YY    YY
+		
+		   GG GG GG
+		   GG GG GG		- x' R U R' D R U' R' D'
+		YY XX GG XX YY
+		
+		   YY
+		   XX GG GG
+		   GG GG GG		- x' R U' R' D R U R' D'
+		   GG GG XX YY
+		
+		   YY    YY
+		   XX GG XX
+		   GG GG GG		- F (R U R' U') (R U R' U') (R U R' U') F'
+		   XX GG XX
+		   YY    YY
+		
+		         YY
+		YY XX GG XX
+		   GG GG GG		- R U2 R2' U' R2 U' R2' U2 R
+		YY XX GG XX
+		         YY
+		
 
 	Les 4 PLL :
 		- arete horaire : R' U R' U' R' U' R' U R U R2'
