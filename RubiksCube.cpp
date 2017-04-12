@@ -80,3 +80,55 @@ Tutoriel F2L avancés
 		- 3e ligne adjacent droite : lock coin puis U' ou lock arete et U'
 		- 3e ligne adjacent dessus pareil : lock coin place arete a cote
 }
+
+05-Methode intermediaire fridrich simplifier {
+	Les 7 OLL : oll cross ou 2look oll
+		Y
+		XGXY
+		GGG
+		GGX
+		  Y
+		- R U R' U R U2 R'
+		YXGG
+		 GGG
+		 XGXY
+		 Y
+		- R U2 R' U' R U' R'
+		GGG
+		GGG
+		XGX
+		Y Y
+		- R2 D R' U2 R D' R' U2 R'
+		 GGG
+		 GGG
+		YXGXY
+		- x' R U R' D R U' R' D'
+		Y
+		XGG
+		GGG
+		GGXY
+		- x' R U' R' D R U R' D'
+		Y Y
+		XGX
+		GGG
+		XGX
+		Y Y
+		- F (R U R' U') (R U R' U') (R U R' U') F'
+		   Y
+		YXGX
+		 GGG
+		YXGX
+		   Y
+		- R U2 R2' U' R2 U' R2' U2 R
+
+	Les 4 PLL :
+		- arete horaire : R' U R' U' R' U' R' U R U R2'
+		- arete antihoraire : R2 U' R' U' R U R U R U' R
+		
+		- coin horaire : x R' U R' D2 R U' R' D2 R2
+		- coin anti horaire : x R2' D2 R U R' D2 R U' R
+}
+
+Ameliorer la croix {
+	en place mais a l'envers : R'uR'u'
+}
