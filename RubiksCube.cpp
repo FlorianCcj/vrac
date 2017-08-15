@@ -17,6 +17,38 @@ Pro
 Tutoriel - Améliorer la croix du 3x3
 Tutoriel F2L avancés
 
+1 ok {
+2 in nok
+2 out R
+2 out F
+}
+
+1 in nok R {
+2 out R
+2 out F
+}
+
+1 in nok F {
+2 out R
+2 out F
+}
+
+2 in ok {
+1 in nok R
+1 in nok F
+1 out R
+1 out F
+1 out U
+}
+
+2 in nok {
+1 in nok R
+1 in nok F
+1 out R
+1 out F
+1 out U
+}
+
 03 Aller plus vite avec la méthode pour debutant (pour passer sub60 {
 	- avoir un bon rubiks (lubix.com : dayan zanshi, guyon v2, etc)
 	- pour U et U' bien utiliser les index et pas toute la main
@@ -131,4 +163,53 @@ Tutoriel F2L avancés
 
 Ameliorer la croix {
 	en place mais a l'envers : R'uR'u'
+}
+
+F2L avance {
+	Mouvement a connaitre et s'entrainer a fond
+	sexy move : RUR'U'
+	sexy move gauche : L'U'LU
+	sleatchemeur : R'FRF'
+	sleatchemeur gauche : LF'L'F
+	
+	
+	Partie 1, deconjugaison intelligente {
+		Lorsqu'une arete est en 2e ligne, reflechir a comment la sortir pour faire un cas de base le plus rapidement possible
+	}
+	
+	Partie 2, Insertions sous differents angles {
+		ne plus faire aucun Y2, s'entrainer a les entrer sans retourner le cube
+	}
+	
+	Partie 3, Utilisations des slots libres {
+		quand les f2l ne sont pas encore fait, inutile de se placer au dessus du coin pour ressoudre la f2l
+	}
+	
+	Partie 4, Eviter les rotations y et y'' {
+		
+	}
+	
+	Partie 5, Cas ou l arete et les coins sont conjugués {
+		
+	}
+	
+	Partie 6, Debuter avec le Xcross {
+		
+	}
+	
+	Partie 7, Supprimer certains regrips {
+		
+	}
+	
+	Partie 8, Améliorer son look ahead {
+		
+	}
+	
+	Partie 9, Complements sur le look ahead {
+		
+	}
+	
+	Partie 10, Debuter avec le multislotting {
+		
+	}
 }
