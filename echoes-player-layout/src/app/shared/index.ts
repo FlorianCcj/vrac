@@ -8,7 +8,6 @@ import { NgxTypeaheadModule  } from 'ngx-typeahead';
 // import { InfiniteScrollModule } from './directives/infinite-scroll';
 import { YoutubePlayerModule } from 'ng2-youtube-player';
 // import { YoutubePlayerModule } from './components/yt-player';
-import { CORE_COMPONENTS } from './components';
 import { PIPES } from './pipes';
 
 @NgModule({
@@ -21,13 +20,11 @@ import { PIPES } from './pipes';
     NgxTypeaheadModule
   ],
   declarations: [
-    ...CORE_COMPONENTS,
     ...PIPES
   ],
   exports: [
     CommonModule,
     FormsModule,
-    ...CORE_COMPONENTS,
     ...PIPES,
     InfiniteScrollModule,
     YoutubePlayerModule,
