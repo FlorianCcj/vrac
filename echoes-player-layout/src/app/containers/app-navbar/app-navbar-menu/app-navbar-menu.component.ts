@@ -15,6 +15,7 @@ enum Key {
 @Component({
   selector: 'app-navbar-menu',
   template: `
+  <!-- header -> menu tout a droite -->
     <button class="btn btn-navbar btn-link ux-maker btn-toggle"
       (click)="toggleMenu()">
       <i class="fa fa-ellipsis-v"></i>
