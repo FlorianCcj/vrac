@@ -27,20 +27,8 @@ import { getPlayerSearch$, getPlayerSearchResults$, getNowPlaylist$ } from '../.
           (search)="search($event)"
         ></player-search>
       </div>
-      <button-group class="nav-toolbar"
-        [buttons]="presets"
-        [selectedButton]="(playerSearch$ | async).queryParams.preset"
-        (buttonClick)="updatePreset($event)"
-      ></button-group>
     </app-navbar>
     <loading-indicator [isLoading]="(playerSearch$ | async).isSearching"></loading-indicator>
-    <youtube-list
-      [list]="videos$ | async"
-      [queued]="(playlist$ | async).videos"
-      (play)="playSelectedVideo($event)"
-      (queue)="queueSelectedVideo($event)"
-      (unqueue)="removeVideoFromPlaylist($event)"
-    ></youtube-list>
   </article>
   `
 })

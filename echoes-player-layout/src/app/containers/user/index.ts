@@ -3,8 +3,6 @@ import { SharedModule } from '../../shared';
 import { AppNavbarModule } from '../app-navbar';
 
 import { UserComponent } from './user.component';
-import { PlaylistsComponent } from './playlists';
-import { PlaylistComponent, PlaylistCoverComponent, PlaylistResolver, PlaylistVideosResolver } from './playlist';
 
 import { AuthGuard } from './user.guard';
 import { UserPlayerService } from './user-player.service';
@@ -17,14 +15,11 @@ import { routing } from './user.routing';
     routing
   ],
   declarations: [
-    UserComponent,
-    PlaylistsComponent,
-    PlaylistComponent,
-    PlaylistCoverComponent
+    UserComponent
   ],
   exports: [
     UserComponent
   ],
-  providers: [ AuthGuard, UserPlayerService, PlaylistResolver, PlaylistVideosResolver ]
+  providers: [ AuthGuard, UserPlayerService ]
 })
 export class UserModule { }

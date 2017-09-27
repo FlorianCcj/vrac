@@ -18,12 +18,6 @@ import { Observable } from 'rxjs/Observable';
   selector: 'player-search',
   encapsulation: ViewEncapsulation.None,
   styleUrls: [ './player-search.scss' ],
-  // <input placeholder="Explore Media" id="media-search"
-  //         typeahead (typeaheadSelected)="handleSelectSuggestion($event)"
-  //         type="search" class="form-control" autocomplete="off"
-  //         [value]="query.query" #mediaSearch name="mediaSearch"
-  //         (input)="onQueryChange(mediaSearch.value)"
-  //         >
   template: `
     <form class="navbar-form form-search" id="media-explorer"
       #form="ngForm"
