@@ -14,6 +14,7 @@ import { getPlayerSearch$, getPlayerSearchResults$, getNowPlaylist$ } from '../.
   encapsulation: ViewEncapsulation.None,
   styleUrls: [ './youtube-videos.scss' ],
   template: `
+  <!-- c'est le header ca bande de con -->
   <article
     infiniteScroll
     [infiniteScrollDistance]="2"

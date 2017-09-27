@@ -25,19 +25,10 @@ import { NowPlaylistService, YoutubePlayerService } from '../../services';
   selector: 'app-player',
   styleUrls: [ './app-player.scss' ],
   template: `
+  <!-- FOOTER BANDE DE CON -->
   <section 
     [class.show-youtube-player]="isShowPlayer$ | async"
     [class.fullscreen]="(isPlayerFullscreen$ | async).on">
-    <div class="yt-player ux-maker">
-      <player-resizer 
-        (toggle)="togglePlayer()"
-        [fullScreen]="isShowPlayer$ | async"
-      ></player-resizer>
-      <youtube-player class="nicer-ux"
-        (ready)="setupPlayer($event)"
-        (change)="updatePlayerState($event)"
-      ></youtube-player>
-    </div>
     <div class="container-fluid">
       <media-info class="col-md-5 col-xs-6"
         [player]="player$ | async"
