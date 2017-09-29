@@ -28,7 +28,7 @@ export class ThemesService {
         head.appendChild(this.styleTag);
     }
 
-//    setTheme(name) {
+    setTheme(name) {
 //        switch (name) {
 //            case 'A':
 //                this.injectStylesheet(themeA);
@@ -55,7 +55,7 @@ export class ThemesService {
 //                this.injectStylesheet(themeH);
 //                break;
 //        }
-//    }
+    }
 
     injectStylesheet(css) {
         this.styleTag.innerHTML = css;
