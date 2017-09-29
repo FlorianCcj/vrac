@@ -1,0 +1,20 @@
+// Override bootstrap variables
+@import "./shared/styles/app/variables";
+
+// Bootstrap
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_mixins";
+
+// Global definition of media queries
+@import "./shared/styles/app/media-queries";
+
+// Layout
+@import "./shared/styles/app/layout";
+@import "./shared/styles/app/layout-extra";
+@import "./shared/styles/app/layout-animation";
+@import "./shared/styles/app/top-navbar";
+@import "./shared/styles/app/sidebar";
+@import "./shared/styles/app/offsidebar";
+
+
+
+@import "./shared/styles/app/settings";
