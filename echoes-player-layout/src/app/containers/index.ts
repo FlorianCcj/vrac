@@ -1,9 +1,9 @@
-import { YoutubeVideosModule } from './youtube-videos';
-import { UserModule } from './user';
+import { Rubrique1Module } from './rubrique1';
+import { Rubrique2Module } from './rubrique2';
 import { AppHeaderModule } from './app-header';
 
 export const APP_CONTAINER_MODULES = [
-  YoutubeVideosModule,
-  UserModule,
+  Rubrique1Module,
+  Rubrique2Module,
   AppHeaderModule
 ];
