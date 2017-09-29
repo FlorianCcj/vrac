@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from '../../shared';
-import { AppNavbarModule } from '../app-navbar';
+import { AppHeaderModule } from '../app-header';
 
 import { UserComponent } from './user.component';
 
@@ -11,7 +11,7 @@ import { routing } from './user.routing';
 @NgModule({
   imports: [
     SharedModule,
-    AppNavbarModule,
+    AppHeaderModule,
     routing
   ],
   declarations: [

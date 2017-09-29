@@ -12,7 +12,7 @@ import { getUserPlaylists$, getUserViewPlaylist$, getIsUserSignedIn$ } from '../
   styleUrls: ['./user.scss'],
   template: `
   <article>
-    <app-navbar>
+    <app-header>
       <h3 class="navbar-text">
         <i class="fa fa-heart"></i> My Profile - <small>My Playlists</small>
       </h3>
@@ -25,7 +25,7 @@ import { getUserPlaylists$, getUserViewPlaylist$, getIsUserSignedIn$ } from '../
           </li>
         </ul>
       </section>
-    </app-navbar>
+    </app-header>
     <p *ngIf="!(isSignedIn$ | async)" class="well lead">
       To view your playlists in youtube, you need to sign in.
       <button class="btn btn-lg btn-primary"

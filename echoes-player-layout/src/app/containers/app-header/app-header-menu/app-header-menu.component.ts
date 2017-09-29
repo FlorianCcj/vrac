@@ -13,7 +13,7 @@ enum Key {
 }
 
 @Component({
-  selector: 'app-navbar-menu',
+  selector: 'app-header-menu',
   template: `
   <!-- header -> menu tout a droite -->
     <button class="btn btn-navbar btn-link ux-maker btn-toggle"
@@ -61,10 +61,10 @@ enum Key {
       </div>
     </div>
   `,
-  styleUrls: ['./app-navbar-menu.component.scss'],
+  styleUrls: ['./app-header-menu.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppNavbarMenuComponent implements OnInit {
+export class AppHeaderMenuComponent implements OnInit {
   hide = true;
   @Input() signedIn = false;
   @Input() appVersion = {

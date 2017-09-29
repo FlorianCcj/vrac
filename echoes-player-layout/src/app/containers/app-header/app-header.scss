@@ -1,7 +1,7 @@
 @import '~css/core/global.scss';
 
 @media (min-width: 320px) {
-  app-navbar {
+  app-header {
     nav.navbar {
       margin-left: 0;
     }
@@ -33,7 +33,7 @@
   }
 }
 @media (min-width: 768px) {
-  app-navbar {
+  app-header {
     nav.navbar {
       margin-left: $drawer-width;
     }
@@ -42,7 +42,7 @@
     }
   }
 
-  .closed + .container-main app-navbar .navbar {
+  .closed + .container-main app-header .navbar {
     margin-left: $sidebar-closed-width;
   }
 }

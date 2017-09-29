@@ -9,9 +9,9 @@ import { AppLayoutActions } from '../../core/store/app-layout';
 import { EchoesState } from '../../core/store';
 
 @Component({
-  selector: 'app-navbar',
+  selector: 'app-header',
   encapsulation: ViewEncapsulation.None,
-  styleUrls: [ './app-navbar.scss' ],
+  styleUrls: [ './app-header.scss' ],
   template: `
     <nav class="row navbar navbar-default navbar-fixed-top">
       <div class="container-fluid">
@@ -22,28 +22,28 @@ import { EchoesState } from '../../core/store';
           </button>
         </h2>
         <div class="navbar__content pull-left">
-          <ng-content></ng-content>
+          <ng-content></ng-content>4
         </div>
         <section class="pull-right navbar-text navbar-actions">
-          <app-navbar-user 
+          <app-header-user 
             [signedIn]="isSignIn()" 
             [userImageUrl]="(user$ | async).profile.imageUrl"
             (signIn)="signInUser()"
-            ></app-navbar-user>
-          <app-navbar-menu 
+            ></app-header-user>
+          <app-header-menu 
             [appVersion]="appVersion$ | async"            
             [signedIn]="isSignIn()"
             (signOut)="signOutUser()"
             (versionUpdate)="updateVersion()"
             (versionCheck)="checkVersion()"
-          ></app-navbar-menu>
+          ></app-header-menu>
         </section>
       </div>
     </nav>
   `
   // changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppNavbarComponent implements OnInit {
+export class AppHeaderComponent implements OnInit {
 
   user$ = this.store.let(getUser$);
   appVersion$ = this.store.let(getAppVersion$);

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from '../../shared';
 
-import { AppNavbarModule } from '../app-navbar';
+import { AppHeaderModule } from '../app-header';
 import { YoutubeVideosComponent } from './youtube-videos.component';
 import { PlayerSearch } from './player-search.component';
 import { TypeAheadComponent } from './typeahead.directive';
@@ -11,7 +11,7 @@ import { routing } from './youtube-videos.routing';
 @NgModule({
   imports: [
     SharedModule,
-    AppNavbarModule,
+    AppHeaderModule,
     routing
   ],
   declarations: [

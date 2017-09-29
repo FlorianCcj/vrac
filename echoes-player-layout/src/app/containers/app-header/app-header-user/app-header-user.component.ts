@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'app-navbar-user',
+  selector: 'app-header-user',
   template: `
   <!-- header -> utilisateur -->
     <span class="btn btn-link navbar-link navbar-btn"
@@ -16,10 +16,10 @@ import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from 
       </span>
     </ng-template>
   `,
-  styleUrls: ['./app-navbar-user.component.scss'],
+  styleUrls: ['./app-header-user.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppNavbarUserComponent {
+export class AppHeaderUserComponent {
   @Input() userImageUrl = '';
   @Input() signedIn = false;
 

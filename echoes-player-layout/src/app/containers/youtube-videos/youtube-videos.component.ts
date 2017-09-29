@@ -20,7 +20,7 @@ import { getPlayerSearch$, getPlayerSearchResults$, getNowPlaylist$ } from '../.
     [infiniteScrollDistance]="2"
     (scrolled)="searchMore()"
     [immediateCheck]="true">
-    <app-navbar>
+    <app-header>
       <div class="navbar-header">
         <player-search
           [query]="playerSearch$ | async"
@@ -28,7 +28,7 @@ import { getPlayerSearch$, getPlayerSearchResults$, getNowPlaylist$ } from '../.
           (search)="search($event)"
         ></player-search>
       </div>
-    </app-navbar>
+    </app-header>
     <loading-indicator [isLoading]="(playerSearch$ | async).isSearching"></loading-indicator>
   </article>
   `
