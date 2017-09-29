@@ -12,7 +12,6 @@ import 'rxjs/add/operator/timeInterval';
 import 'rxjs/add/operator/retry';
 
 import { Store } from '@ngrx/store';
-import { UserProfileActions } from '../store/user-profile';
 import { EchoesState } from '../store/';
 import { CLIENT_ID } from './constants';
 import { GapiLoader } from './gapi-loader.service';
@@ -35,7 +34,6 @@ export class Authorization {
     private zone: NgZone,
     private store: Store<EchoesState>,
     private gapiLoader: GapiLoader,
-    private userProfileActions: UserProfileActions,
     public http: Http
   ) {
     this.loadAuth();
@@ -97,8 +95,6 @@ export class Authorization {
     const MILLISECOND = 1000;
     const expireTime = 60 * 5;
     const expireTimeInMs = expireTime * MILLISECOND;
-    this.store.dispatch(this.userProfileActions.updateToken(token));
-    this.store.dispatch(this.userProfileActions.userProfileRecieved(profile));
     this.disposeAutoSignIn();
     this.autoSignInTimer = this.startTimerToNextAuth(expireTimeInMs);
   }
@@ -131,7 +127,7 @@ export class Authorization {
     this.disposeAutoSignIn();
     return Observable.fromPromise(this._googleAuth.signOut())
       .subscribe(response => {
-        this.store.dispatch(this.userProfileActions.signOut());
+        // this.store.dispatch(this.userProfileActions.signOut());
       });
   }
 

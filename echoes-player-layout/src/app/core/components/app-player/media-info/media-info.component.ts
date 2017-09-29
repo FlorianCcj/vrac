@@ -19,7 +19,6 @@ import {
         title="maximize / minimize"
         (click)="handleThumbClick()">
         <img src="{{ player?.media?.snippet?.thumbnails?.default?.url }}">
-        <i class="fa fa-arrows-alt" [ngClass]="{ 'invisible': _minimized }"></i>
       </aside>
       <a class="title">{{ player?.media?.snippet?.title }}</a>
     </h3>

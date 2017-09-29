@@ -4,7 +4,6 @@ import {
   getPlayerFullscreen$, getShowPlayer$,
   getPlayer$, getCurrentMedia$, getIsPlayerPlaying$
 } from '../../store/app-player';
-import { isPlayerInRepeat$ } from '../../store/now-playlist/now-playlist.selectors';
 import { EchoesState } from '../../store';
 import { Store } from '@ngrx/store';
 import {
@@ -19,7 +18,7 @@ import {
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/take';
 
-import { NowPlaylistService, YoutubePlayerService } from '../../services';
+import { YoutubePlayerService } from '../../services';
 
 @Component({
   selector: 'app-player',
@@ -35,89 +34,29 @@ import { NowPlaylistService, YoutubePlayerService } from '../../services';
         [minimized]="media$ | async"
         (thumbClick)="toggleFullScreen()"
       ></media-info>
-      <player-controls class="col-md-4 col-xs-6 controls-container nicer-ux" 
-        [isRepeat]="isPlayerInRepeat$ | async"
-        [playing]="isPlayerPlaying$ | async"
-        [media]="media$ | async"
-        (pause)="pauseVideo()"
-        (next)="playNextTrack()"
-        (play)="playVideo($event)"
-        (previous)="playPreviousTrack()"
-        (repeat)="toggleRepeat()"
-      ></player-controls>
     </div>
   </section>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppPlayerComponent implements OnInit {
-  player$ = this.store.let(getPlayer$);
-  media$ = this.store.let(getCurrentMedia$);
-  isPlayerPlaying$ = this.store.let(getIsPlayerPlaying$);
-  isPlayerInRepeat$ = this.store.let(isPlayerInRepeat$);
-  isPlayerFullscreen$ = this.store.let(getPlayerFullscreen$);
-  isShowPlayer$ = this.store.let(getShowPlayer$);
+  player$ = null;
+  media$ = null;
+  isPlayerPlaying$ = null;
+  isPlayerInRepeat$ = null;
+  isPlayerFullscreen$ = null;
+  isShowPlayer$ = null;
 
   @HostBinding('class.youtube-player') style = true;
 
   constructor(
     private playerService: YoutubePlayerService,
-    public nowPlaylistService: NowPlaylistService,
     private playerActions: AppPlayerActions,
     private store: Store<EchoesState>,
-    private nowPlaylistEffects: NowPlaylistEffects
   ) {
   }
 
   ngOnInit() {
     this.store.dispatch(this.playerActions.reset());
-    this.nowPlaylistEffects.loadNextTrack$
-      .subscribe((action) => this.playVideo(action.payload));
-  }
-
-  setupPlayer (player) {
-    this.playerService.setupPlayer(player);
-  }
-
-  updatePlayerState (event) {
-    this.playerService.onPlayerStateChange(event);
-    if (event.data === YT.PlayerState.ENDED) {
-      // this.store.dispatch(this.playerActions.loadNextTrack());
-      this.nowPlaylistService.trackEnded();
-    }
-  }
-
-  playVideo (media: GoogleApiYouTubeVideoResource) {
-    this.store.dispatch(this.playerActions.playVideo(media));
-  }
-
-  pauseVideo () {
-    this.playerService.pause();
-  }
-
-  togglePlayer () {
-    this.playerService.togglePlayer();
-  }
-
-  toggleFullScreen () {
-    this.store.dispatch(this.playerActions.fullScreen());
-  }
-
-  playNextTrack () {
-    this.nowPlaylistService.selectNextIndex();
-    this.store.dispatch(this.playerActions.playVideo(this.nowPlaylistService.getCurrent()));
-  }
-
-  playPreviousTrack () {
-    this.nowPlaylistService.selectPreviousIndex();
-    this.store.dispatch(this.playerActions.playVideo(this.nowPlaylistService.getCurrent()));
-  }
-
-  isLastIndex () {
-    return this.nowPlaylistService.isInLastTrack();
-  }
-
-  toggleRepeat() {
-    this.nowPlaylistService.toggleRepeat();
   }
 }
