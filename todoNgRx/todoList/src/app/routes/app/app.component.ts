@@ -3,7 +3,8 @@ import {Store} from '@ngrx/store';
 import * as Rx from "rxjs/Rx";
 
 import {AppState} from "../../interfaces/appState";
-import {addTodo, toggleAll} from "../../core/store/todos/todos.actions";
+// import {addTodo, toggleAll} from "../../core/store/todos/todos.actions"; 
+import {TodosActions} from "../../core/store/todos/todos.actions"; 
 import {Todo} from "../../models/todo.model"
 
 @Component({
@@ -14,12 +15,15 @@ import {Todo} from "../../models/todo.model"
 export class AppComponent {
 
   todo$ = new Rx.Subject()
-        .map((value: string) => ( value.trim() === '' ? {type: null, payload: null} : addTodo(new Todo(value))));
+        .map((value: string) => ( value.trim() === '' ? {type: null, payload: null} : this.todosActions.addTodo(new Todo(value))));
 
     toggleAll$ =  new Rx.Subject()
-        .map((payload) =>  toggleAll(payload));
+        .map((payload) =>  this.todosActions.toggleAll(payload));
 
-    constructor(store: Store<AppState>) {
+    constructor(
+      private todosActions: TodosActions,
+      store: Store<AppState>
+    ) {
         Rx.Observable.merge(
             this.todo$,
             this.toggleAll$

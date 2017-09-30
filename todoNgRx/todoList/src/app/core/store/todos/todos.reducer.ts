@@ -1,4 +1,4 @@
-import {ADD_TODO, REMOVE_TODO, TOGGLE_TODO, TOGGLE_ALL, ARCHIVE, TOGGLE_EDITING, UPDATE_TEXT} from "./todos.actions";
+import {TodosActions} from "./todos.actions";
 import {Todo} from "../../../models/todo.model";
 
 const persistedTodos = JSON.parse(localStorage.getItem('todos') || '[]');
@@ -11,20 +11,20 @@ const todosInitialState = persistedTodos.map( (todo: {_text: String, done: Boole
 
 export const todos:any = (state = todosInitialState, {type, payload}) => {
     switch (type){
-        case ADD_TODO:
+        case TodosActions.ADD_TODO:
             return [payload, ...state];
 
-        case REMOVE_TODO:
+        case TodosActions.REMOVE_TODO:
             return state.filter(t => t !== payload);
 
-        case TOGGLE_TODO:
+        case TodosActions.TOGGLE_TODO:
             return state.map(t => {
                 if (t === payload)
                     t.done = !t.done;
                 return t;
             });
 
-        case TOGGLE_EDITING:
+        case TodosActions.TOGGLE_EDITING:
             return state.map(t => {
                 if (t === payload.todo) {
                     t.editing = payload.editing;
@@ -33,7 +33,7 @@ export const todos:any = (state = todosInitialState, {type, payload}) => {
                 return t;
             });
         
-        case UPDATE_TEXT:
+        case TodosActions.UPDATE_TEXT:
             return state.map(t => {
                 if (t === payload.todo) {
                     t.text = payload.text.trim() !== "" ?  payload.text.trim() : t.text;
@@ -43,13 +43,13 @@ export const todos:any = (state = todosInitialState, {type, payload}) => {
             });
 
 
-        case TOGGLE_ALL:
+        case TodosActions.TOGGLE_ALL:
             return state.map(t => {
                 t.done = payload;
                 return t;
             });
 
-        case ARCHIVE:
+        case TodosActions.ARCHIVE:
             return state.filter(t => t.done === false);
 
         default:

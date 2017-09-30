@@ -1,5 +1,6 @@
 import {Component} from "@angular/core";
-import {ALL, IN_PROGRESS, DONE, filterByStatus} from "../../core/store/filters/filters.actions";
+// import {ALL, IN_PROGRESS, DONE, filterByStatus} from "../../core/store/filters/filters.actions";
+import {FiltersActions, ALL, IN_PROGRESS, DONE} from "../../core/store/filters/filters.actions";
 import {AppState} from "../../interfaces/appState";
 import {Store} from "@ngrx/store";
 import * as Rx from "rxjs/Rx";
@@ -12,9 +13,12 @@ export class StatusSelectorComponent {
 	statuses = [ALL, IN_PROGRESS, DONE];
 
     changeStatus$ = new Rx.Subject()
-        .map((status) => filterByStatus(status));
+        .map((status) => this.filtersActions.filterByStatus(status));
 
-    constructor(store: Store<AppState>) {
+    constructor(
+      private filtersActions: FiltersActions,
+      store: Store<AppState>
+    ) {
         Rx.Observable.merge(
             this.changeStatus$
         )

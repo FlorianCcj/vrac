@@ -2,7 +2,8 @@ import {Component} from "@angular/core";
 import {AppState} from "../../interfaces/appState";
 import {Store} from "@ngrx/store";
 import * as Rx from "rxjs/Rx";
-import {removeTodo, toggleTodo, toggleEditTodo, updateTodoText} from "../../core/store/todos/todos.actions";
+// import {removeTodo, toggleTodo, toggleEditTodo, updateTodoText} from "../../core/store/todos/todos.actions";
+import {TodosActions} from "../../core/store/todos/todos.actions";
 
 
 @Component({
@@ -15,18 +16,21 @@ export class TodoListComponent {
     filters;
 
     removeClick$ = new Rx.Subject()
-        .map((payload) =>  removeTodo(payload));
+        .map((payload) =>  this.todosActions.removeTodo(payload));
 
     toggleTodo$ =  new Rx.Subject()
-        .map((payload) =>  toggleTodo(payload));
+        .map((payload) =>  this.todosActions.toggleTodo(payload));
     
     toggleEditTodo$ = new Rx.Subject()
-        .map((payload) => toggleEditTodo(payload));
+        .map((payload) => this.todosActions.toggleEditTodo(payload));
     
     updateTodoText$ = new Rx.Subject()
-        .map((payload) => updateTodoText(payload));
+        .map((payload) => this.todosActions.updateTodoText(payload));
 
-    constructor(store: Store<AppState>){
+    constructor(
+      store: Store<AppState>,
+      private todosActions: TodosActions
+    ){
         this.todos = store.select('todos');
         this.filters = store.select('filters');
 

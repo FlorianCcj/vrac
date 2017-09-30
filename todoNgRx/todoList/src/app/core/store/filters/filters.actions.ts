@@ -1,36 +1,25 @@
-/**
- *  action types
- */
-
-
-export const TEXT_UPDATE = '@@filters/TEXT_UPDATE';
-export const STATUS_UPDATE = '@@filters/STATUS_UPDATE';
-
-
-
-/**
- *  action creators
- */
-
-export function filterByText(payload) {
-    return {
-        type: TEXT_UPDATE,
-        payload
-    }
-}
-
-export function filterByStatus(payload) {
-    return {
-        type: STATUS_UPDATE,
-        payload
-    }
-}
-
-/*
- *  constants
- */
+import { Injectable } from '@angular/core'; 
 
 export const ALL = "All";
 export const IN_PROGRESS = "In Progress";
 export const DONE = "Done";
 
+@Injectable()
+export class FiltersActions {
+	static TEXT_UPDATE = '@@filters/TEXT_UPDATE';
+	static STATUS_UPDATE = '@@filters/STATUS_UPDATE';
+
+	filterByText(payload) {
+	    return {
+	        type: FiltersActions.TEXT_UPDATE,
+	        payload
+	    };
+	}
+
+	filterByStatus(payload) {
+	    return {
+	        type: FiltersActions.STATUS_UPDATE,
+	        payload
+	    };
+	}
+};

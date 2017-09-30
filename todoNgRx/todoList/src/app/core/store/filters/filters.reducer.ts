@@ -1,5 +1,5 @@
 import {Filters} from "../../../interfaces/filters";
-import {TEXT_UPDATE, ALL, STATUS_UPDATE} from "./filters.actions";
+import {FiltersActions, ALL} from "./filters.actions";
 
 const initialState: Filters = {
     text: '',
@@ -8,13 +8,10 @@ const initialState: Filters = {
 
 export const filters:any = (state = initialState,  {type, payload}) => {
     switch (type){
-        
-        case TEXT_UPDATE:
+        case FiltersActions.TEXT_UPDATE:
             return Object.assign({}, state, {text: payload});
-
-        case STATUS_UPDATE:
+        case FiltersActions.STATUS_UPDATE:
             return Object.assign({}, state, {status: payload});
-        
         default:
             return state;
     }

@@ -14,7 +14,7 @@ const ROUTE_COMPONENTS = [
 
 @NgModule({
   imports: [
-    SharedModule
+    SharedModule,
   ],
   declarations: [
   	...ROUTE_COMPONENTS
