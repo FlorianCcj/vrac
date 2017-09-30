@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
-import { CoreModule } from './core';
+import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared';
 
 import { APP_CORE_MODULES } from './core/components';
