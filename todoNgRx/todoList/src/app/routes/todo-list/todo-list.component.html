@@ -8,5 +8,3 @@
     <input class="edit" *ngIf="todo.editing" [value]="todo.text" #editedtodo (blur)="toggleEditTodo$.next({todo: todo, editing: false, text: editedtodo.value})" (keyup.enter)="updateTodoText$.next({todo: todo, text: editedtodo.value})" (keyup.escape)="toggleEditTodo$.next({todo: todo, editing: false, text: null})">
   </li>
 </ul>
-
-<span *ngFor="let todo of (todos | async)"> {{todo.text}}</span>
