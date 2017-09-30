@@ -9,7 +9,7 @@ const todosInitialState = persistedTodos.map( (todo: {_text: String, done: Boole
     return ret;
 });
 
-export const todos:any = (state = todosInitialState, {type, payload}) => {
+export function todos(state = todosInitialState, {type, payload}) {
     switch (type){
         case TodosActions.ADD_TODO:
             return [payload, ...state];

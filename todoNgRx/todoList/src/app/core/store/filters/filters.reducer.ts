@@ -6,7 +6,7 @@ const initialState: Filters = {
     status: ALL
 };
 
-export const filters:any = (state = initialState,  {type, payload}) => {
+export function filters(state = initialState,  {type, payload}) {
     switch (type){
         case FiltersActions.TEXT_UPDATE:
             return Object.assign({}, state, {text: payload});

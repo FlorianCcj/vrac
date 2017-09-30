@@ -187,8 +187,6 @@ export function nowPlaylist ( state: YoutubeMediaPlaylist = initialState, action
 
 
 
-
-
 Les links reccount useless qui m'insuporte
 l'asistana
 le pl
@@ -197,3 +195,5 @@ la perte de temps
 le multi rl
 
  https://chatons.org/
+ warlord tree : heroic migth a coordinated offense
+ tactical insigth ++
