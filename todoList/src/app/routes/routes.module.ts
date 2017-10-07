@@ -1,25 +1,12 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-
-import { MenuService } from '../core/services/layout/menu.service';
-import { SharedModule } from '../shared/shared.module';
-
-import { menu } from './menu';
-import { routes } from './routes';
+import { CommonModule } from '@angular/common';
+import { TodoComponent } from './todo/todo.component';
+import { TodosComponent } from './todos/todos.component';
 
 @NgModule({
-    imports: [
-        SharedModule,
-        RouterModule.forRoot(routes),
-    ],
-    declarations: [],
-    exports: [
-        RouterModule
-    ]
+  imports: [
+    CommonModule
+  ],
+  declarations: [TodoComponent, TodosComponent]
 })
-
-export class RoutesModule {
-    constructor(private menuService: MenuService) {
-        menuService.addMenu(menu);
-    }
-}
+export class RoutesModule { }

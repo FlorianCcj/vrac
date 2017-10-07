@@ -1,30 +1,18 @@
-import { NgModule, Optional, SkipSelf } from '@angular/core';
-
-import { LayoutService } from './services/layout/layout.service';
-import { ThemesService } from './services/layout/themes.service';
-import { MenuService } from './services/layout/menu.service';
-import { UserService } from './services/user.service';
-import { AppService } from './services/app.service';
-
-import { throwIfAlreadyLoaded } from './module-import-guard';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import {todos} from './store/todos/todos.reducer'
+import {TodosEffects} from './store/todos/todos.effects';
+import {StoreModule} from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import {TodosService} from './services/todos.service'
 
 @NgModule({
-    imports: [
-    ],
-    providers: [
-        LayoutService,
-        ThemesService,
-        MenuService,
-        UserService,
-        AppService
-    ],
-    declarations: [
-    ],
-    exports: [
-    ]
+  imports: [
+    CommonModule,
+    StoreModule.forRoot({todos}),
+    EffectsModule.run(TodosEffects),
+  ],
+  providers : [TodosService],
+  declarations: []
 })
-export class CoreModule {
-    constructor( @Optional() @SkipSelf() parentModule: CoreModule) {
-        throwIfAlreadyLoaded(parentModule, 'CoreModule');
-    }
-}
+export class CoreModule { }
