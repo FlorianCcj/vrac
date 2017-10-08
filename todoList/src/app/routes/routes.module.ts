@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { TodoComponent } from './todo/todo.component';
-import { TodosComponent } from './todos/todos.component';
+import { RouterModule } from '@angular/router';
+import { SharedModule } from '../shared/shared.module';
+
+import { routes } from './routes';
 
 @NgModule({
   imports: [
-    CommonModule
+  	RouterModule.forRoot(routes),
+    SharedModule
   ],
-  declarations: [TodoComponent, TodosComponent]
+  declarations: []
 })
 export class RoutesModule { }

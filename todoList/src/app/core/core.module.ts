@@ -1,18 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {todos} from './store/todos/todos.reducer'
-import {TodosEffects} from './store/todos/todos.effects';
+// import {TodosEffects} from './store/todos/todos.effects';
+import {TodosActions} from './store/todos/todos.actions';
 import {StoreModule} from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
+// import { EffectsModule } from '@ngrx/effects';
 import {TodosService} from './services/todos.service'
 
 @NgModule({
   imports: [
     CommonModule,
     StoreModule.forRoot({todos}),
-    EffectsModule.run(TodosEffects),
+    // EffectsModule.run(TodosEffects),
   ],
-  providers : [TodosService],
+  providers : [TodosService, TodosActions],
   declarations: []
 })
 export class CoreModule { }

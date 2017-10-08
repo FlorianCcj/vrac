@@ -1,1 +1,3 @@
-<todos [todos]="todos | async"></todos>
+<app-todo-list [todos]="todos | async"></app-todo-list>
+
+<app-todo-creation (add)="addTodo($event)"></app-todo-creation>

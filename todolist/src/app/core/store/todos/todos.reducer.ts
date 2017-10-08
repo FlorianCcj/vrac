@@ -1,12 +1,4 @@
-export const GET_TODOS = "GET_TODOS";
-export const GET_TODOS_SUCCESS = "GET_TODOS_SUCCESS";
-export const GET_TODOS_ERROR = "GET_TODOS_ERROR";
-
-export function getTodos() {
-  return {
-    type: GET_TODOS
-  }
-}
+import {TodosActions} from './todos.actions'
 
 const initialState = {
   data: [],
@@ -16,12 +8,16 @@ const initialState = {
 
 export function todos( state = initialState, { type, payload } ) {
   switch( type ) {
-    case GET_TODOS:
+    case TodosActions.GET_TODOS:
       return Object.assign({}, state, {pending: true, error: null})
-    case GET_TODOS_SUCCESS:
+    case TodosActions.GET_TODOS_SUCCESS:
       return Object.assign({}, state, {data: payload, pending: false})
-    case GET_TODOS_ERROR:
+    case TodosActions.GET_TODOS_ERROR:
       return Object.assign({}, state, {pending: false, error: "Error"})
+    case TodosActions.ADD_TODO_SUCCESS:
+      return Object.assign({}, state, {
+        data: [...state.data, payload]
+      });
     default:
       return state;
   }

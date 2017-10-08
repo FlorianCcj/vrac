@@ -8,6 +8,7 @@ import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core
 })
 export class TodoDetailComponent implements OnInit {
 	@Input() todo;
+	
   constructor() { }
 
   ngOnInit() {

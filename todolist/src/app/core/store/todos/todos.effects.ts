@@ -1,21 +1,31 @@
+
 import { Injectable } from "@angular/core";
 import { Actions, Effect } from "@ngrx/effects";
 import { Observable } from "rxjs/Observable";
-import { GET_TODOS, GET_TODOS_SUCCESS, GET_TODOS_ERROR } from "./todos.reducer";
+import { TodosActions } from "./todos.actions";
 import 'rxjs/add/observable/of';
 
 import { TodosService } from "../../services/todos.service";
 
 @Injectable()
 export class TodosEffects {
-  constructor( private actions$ : Actions, 
-               private todosService : TodosService ) {
-  }
+  constructor(
+    private todosActions: TodosActions,
+    private actions$ : Actions, 
+    private todosService : TodosService 
+  ) { }
 
   @Effect() getTodos$ = this.actions$
-    .ofType(GET_TODOS)
+    .ofType(TodosActions.GET_TODOS)
     .switchMap(action =>
       this.todosService.getTodos()
-           .map(todos => ({type: GET_TODOS_SUCCESS, payload: todos}))
-           .catch(() => Observable.of({type: GET_TODOS_ERROR})));
+           .map(todos => ({type: TodosActions.GET_TODOS_SUCCESS, payload: todos}))
+           .catch(() => Observable.of({type: TodosActions.GET_TODOS_ERROR})));
+
+ 	@Effect() addTodo$ = this.actions$
+    .ofType(TodosActions.ADD_TODO)
+    .switchMap(action =>
+      this.todosService.addTodo(action.payload.title)
+        .map(todo => ({type: TodosActions.ADD_TODO_SUCCESS, payload: todo}))
+        .catch(() => Observable.of({type: TodosActions.ADD_TODO_ERROR})));
 }

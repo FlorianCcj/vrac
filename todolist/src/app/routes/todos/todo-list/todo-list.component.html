@@ -1,5 +1,5 @@
  <p *ngIf="todos.pending">Loading...</p>
-    <todo-detail [todo]="todo"
+    <app-todo-detail [todo]="todo"
           *ngFor="let todo of todos.data">
-    </todo-detail>
+    </app-todo-detail>
     <p *ngIf="todos.error">{{todos.error}}</p>

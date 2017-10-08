@@ -1,22 +1,20 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs/Observable";
+import {Http} from '@angular/http'
 
 @Injectable()
 export class TodosService {
 
-  getTodos() {
-    const todos = [
-    	{
-    		id: 1, 
-        title: "Learn ngrx/store", 
-        completed: false
-      }, {
-        id: 2, 
-        title: "Learn ngrx/effects", 
-        completed: false
-      }
-    ]
-    return Observable.timer(1000).mapTo(todos)
+  constructor(private http: Http) {
+
   }
 
+  getTodos() {
+    return this.http.get('../../../assets/server/todos/getTodos.json');
+  }
+
+  addTodo( title ) {
+    // creer un stream avec un nouveau todo le merger avec le getTodos
+    return this.http.get('../../../assets/server/todos/addTodo.json');
+  }
 }
