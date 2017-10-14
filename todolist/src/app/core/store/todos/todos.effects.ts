@@ -17,13 +17,14 @@ export class TodosEffects {
     private todosService : TodosService 
   ) { }
 
-  /*@Effect() 
+  @Effect() 
   getTodos$ = this.actions$
     .ofType(TodosActions.GET_TODOS)
     .switchMap((action) => 
       this.todosService.getTodos()
         .map((todos) => (this.todosActions.getTodosSuccess(todos)))
         .catch(() => Observable.of(this.todosActions.getTodosError()))
+   
     );
 
    /*@Effect() 

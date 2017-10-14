@@ -12,7 +12,8 @@ export class TodosService {
   }
 
   getTodos() {
-    return this.http.get('../../../assets/server/todos/getTodos.json');
+    return this.http.get('../../../assets/server/todos/getTodos.json')
+    	.map(res => res.json());
   }
 
   /*addTodo( title ) {
