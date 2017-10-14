@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.3.
 
-## How I didi it
+## How I did it
 
  * inspirer de l'architecture fichier du theme angle
  * suivi du tuto [Medium - Front end hacking](https://medium.com/front-end-hacking/managing-state-in-angular-apps-with-ngrx-store-and-ngrx-effects-part-1-a878addba622)

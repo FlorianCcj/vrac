@@ -1,6 +1,8 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs/Observable";
-import {Http} from '@angular/http'
+import {Http} from '@angular/http';
+import 'rxjs/add/observable/timer';
+import 'rxjs/add/operator/mapTo';
 
 @Injectable()
 export class TodosService {
@@ -13,8 +15,8 @@ export class TodosService {
     return this.http.get('../../../assets/server/todos/getTodos.json');
   }
 
-  addTodo( title ) {
-    // creer un stream avec un nouveau todo le merger avec le getTodos
-    return this.http.get('../../../assets/server/todos/addTodo.json');
-  }
+  /*addTodo( title ) {
+    return Observable.timer(2000)
+      .mapTo({id: Math.random(), title, completed: false})
+  }*/
 }

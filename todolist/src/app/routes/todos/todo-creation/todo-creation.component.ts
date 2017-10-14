@@ -11,7 +11,6 @@ export class TodoCreationComponent implements OnInit {
 
 	control : FormControl = new FormControl("");
   @Output() add = new EventEmitter()
-	// @Input()
   
   constructor() { }
 

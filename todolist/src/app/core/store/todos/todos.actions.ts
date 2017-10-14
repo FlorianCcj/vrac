@@ -12,17 +12,41 @@ export class TodosActions {
 	static ADD_TODO_SUCCESS = "ADD_TODO_SUCCESS";
 	static ADD_TODO_ERROR = "ADD_TODO_ERROR";
 
-	getTodos(): Action {
+	getTodos() {
 	  return {
 	    type: TodosActions.GET_TODOS
 	  }
 	}
 
-	addTodo( title ): any {
-	  let test = {title}
+	getTodosSuccess(data) {
+		return {
+			type: TodosActions.GET_TODOS_SUCCESS,
+			payload: data
+		}
+	}
+
+	getTodosError() {
+		return {
+			type: TodosActions.GET_TODOS_ERROR
+		}
+	}
+
+	/*addTodo( title ): any {
 	  return {
 	    type: TodosActions.ADD_TODO,
-	    payload: test
+	    payload: title
 	  }
 	}
+
+	addTodoSuccess() {
+	  return {
+	    type: TodosActions.ADD_TODO_SUCCESS,
+	  }
+	}
+
+	addTodoError() {
+	  return {
+	    type: TodosActions.ADD_TODO_ERROR,
+	  }
+	}*/
 }
