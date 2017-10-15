@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import {HttpModule} from '@angular/http';
 import {todos, TodosState} from './store/todos/todos.reducer'
 import {TodosEffects} from './store/todos/todos.effects';
-import {TodosActions} from './store/todos/todos.actions';
 import {StoreModule, ActionReducerMap} from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import {TodosService} from './services/todos.service'
@@ -29,8 +28,6 @@ const reducers: ActionReducerMap<AppState> = {
   ],
   providers : [
     TodosService,
-  	TodosActions,
-
 	],
   declarations: []
 })
