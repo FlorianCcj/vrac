@@ -16,8 +16,8 @@ export class TodosService {
     	.map(res => res.json());
   }
 
-  /*addTodo( title ) {
+  addTodo( title ) {
     return Observable.timer(2000)
       .mapTo({id: Math.random(), title, completed: false})
-  }*/
+  }
 }
