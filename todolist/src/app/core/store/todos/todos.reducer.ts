@@ -1,4 +1,4 @@
-import {TodosActions} from './todos.actions'
+import * as TodosActions from './todos.actions'
 
 export interface TodosState {
   data: any[];

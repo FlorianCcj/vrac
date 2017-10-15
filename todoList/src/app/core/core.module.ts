@@ -28,8 +28,9 @@ const reducers: ActionReducerMap<AppState> = {
     EffectsModule.forRoot(effects),
   ],
   providers : [
-  	TodosService, 
-  	TodosActions
+    TodosService,
+  	TodosActions,
+
 	],
   declarations: []
 })
