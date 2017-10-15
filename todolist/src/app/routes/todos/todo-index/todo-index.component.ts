@@ -27,8 +27,8 @@ export class TodoIndexComponent implements OnInit {
   ngOnInit() {
   }
 
-  /*addTodo( todo ) {
+  addTodo( todo ) {
     this.store.dispatch(this.todosActions.addTodo(todo));
-  }*/
+  }
 
 }
