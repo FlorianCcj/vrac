@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from "@ngrx/store";
 import { Observable } from "rxjs/Observable";
-import { TodosActions } from "../../../core/store/todos/todos.actions";
+import * as TodosActions from "../../../core/store/todos/todos.actions";
 import { TodosEffects } from "../../../core/store/todos/todos.effects";
 
 @Component({
@@ -16,10 +16,9 @@ export class TodoIndexComponent implements OnInit {
 
   constructor(
     private store : Store<any>,
-    private todosActions: TodosActions,
     private todosEffects: TodosEffects
   ) {
-  	this.store.dispatch(this.todosActions.getTodos());
+  	this.store.dispatch(new TodosActions.GetTodos());
     this.todos = store.select("todos");
     /*this.addTodoSuccess$ = this.todosEffects.addTodo$.filter(( action ) => action.type === this.todosActions.addTodoSuccess().type);*/
   }
@@ -28,7 +27,7 @@ export class TodoIndexComponent implements OnInit {
   }
 
   addTodo( todo ) {
-    this.store.dispatch(this.todosActions.addTodo(todo));
+    this.store.dispatch(new TodosActions.AddTodo(todo));
   }
 
 }
