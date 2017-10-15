@@ -5,14 +5,13 @@ import 'rxjs/add/operator/catch';
 import { Injectable } from "@angular/core";
 import { Actions, Effect } from "@ngrx/effects";
 import { Observable } from "rxjs/Observable";
-import { TodosActions } from "./todos.actions";
+import * as TodosActions from "./todos.actions";
 import {of} from "rxjs/observable/of";
 import { TodosService } from "../../services/todos.service";
 
 @Injectable()
 export class TodosEffects {
   constructor(
-    private todosActions: TodosActions,
     private actions$ : Actions,
     private todosService : TodosService 
   ) { }
@@ -22,8 +21,8 @@ export class TodosEffects {
     .ofType(TodosActions.GET_TODOS)
     .switchMap((action) => 
       this.todosService.getTodos()
-        .map((todos) => (this.todosActions.getTodosSuccess(todos)))
-        .catch(() => Observable.of(this.todosActions.getTodosError()))
+        .map((todos) => (new TodosActions.GetTodosSuccess(todos)))
+        .catch(() => Observable.of(new TodosActions.GetTodosError()))
    
     );
 
