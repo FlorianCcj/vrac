@@ -26,6 +26,7 @@ export class AddTodo implements Action {
 }
 export class AddTodoSuccess implements Action {
   readonly type = ADD_TODO_SUCCESS;
+  constructor(public payload: any) {}
 }
 export class AddTodoError implements Action {
   readonly type = ADD_TODO_ERROR;

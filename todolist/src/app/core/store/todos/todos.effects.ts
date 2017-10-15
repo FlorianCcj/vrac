@@ -3,7 +3,8 @@ import "rxjs/add/operator/map";
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/catch';
 import { Injectable } from "@angular/core";
-import { Actions, Effect } from "@ngrx/effects";
+import { Effect, Actions } from "@ngrx/effects";
+import { Action } from "@ngrx/store";
 import { Observable } from "rxjs/Observable";
 import * as TodosActions from "./todos.actions";
 import {of} from "rxjs/observable/of";
@@ -26,11 +27,11 @@ export class TodosEffects {
    
     );
 
-   /*@Effect() 
-   addTodo$ = this.actions$
-    .ofType(TodosActions.ADD_TODO)
-    .switchMap(action =>
+   @Effect() 
+   addTodo$: Observable<Action> = this.actions$
+    .ofType<TodosActions.AddTodo>(TodosActions.ADD_TODO)
+    .switchMap(action => 
       this.todosService.addTodo(action.payload.title)
-        .map(todo => (this.todosActions.addTodoSuccess()))
-        .catch(() => Observable.of(this.todosActions.addTodoError())));*/
+        .map(todo => (new TodosActions.AddTodoSuccess(todo)))
+        .catch(() => Observable.of(new TodosActions.AddTodoError())));
 }
