@@ -6,6 +6,7 @@ import { TodoDetailComponent } from './todo-detail/todo-detail.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { TodoIndexComponent } from './todo-index/todo-index.component';
 import { TodoCreationComponent } from './todo-creation/todo-creation.component';
+import { TodoFilterComponent } from './todo-filter/todo-filter.component';
 
 const routes: Routes = [
     { path: '', component: TodoIndexComponent }
@@ -20,7 +21,7 @@ const routes: Routes = [
   	TodoDetailComponent, 
   	TodoListComponent, 
   	TodoIndexComponent, 
-  	TodoCreationComponent
+  	TodoCreationComponent, TodoFilterComponent
   ]
 })
 export class TodosModule { }
