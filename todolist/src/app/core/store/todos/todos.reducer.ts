@@ -20,10 +20,10 @@ export function todos( state = initialState, { type, payload } ): TodosState {
       return Object.assign({}, state, {data: payload, pending: false})
     case TodosActions.GET_TODOS_ERROR:
       return Object.assign({}, state, {pending: false, error: "Error"})
-    /*case TodosActions.ADD_TODO_SUCCESS:
+    case TodosActions.ADD_TODO_SUCCESS:
       return Object.assign({}, state, {
         data: [...state.data, payload]
-      });*/
+      });
     default:
       return state;
   }

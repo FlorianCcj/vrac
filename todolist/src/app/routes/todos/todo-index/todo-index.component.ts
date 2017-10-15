@@ -3,6 +3,7 @@ import { Store } from "@ngrx/store";
 import { Observable } from "rxjs/Observable";
 import * as TodosActions from "../../../core/store/todos/todos.actions";
 import { TodosEffects } from "../../../core/store/todos/todos.effects";
+import 'rxjs/add/operator/filter';
 
 @Component({
   selector: 'app-todo-index',
@@ -20,7 +21,7 @@ export class TodoIndexComponent implements OnInit {
   ) {
   	this.store.dispatch(new TodosActions.GetTodos());
     this.todos = store.select("todos");
-    /*this.addTodoSuccess$ = this.todosEffects.addTodo$.filter(( action ) => action.type === this.todosActions.addTodoSuccess().type);*/
+    this.addTodoSuccess$ = this.todosEffects.addTodo$.filter(( {type} ) => type === TodosActions.ADD_TODO_SUCCESS);
   }
 
   ngOnInit() {
