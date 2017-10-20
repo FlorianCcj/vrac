@@ -28,6 +28,7 @@ export class TodoIndexComponent implements OnInit {
     this.todos = store.select("todos");
     this.addTodoSuccess$ = this.todosEffects.addTodo$.filter(( {type} ) => type === TodosActions.ADD_TODO_SUCCESS);
     this.activeFilter = store.select("visibilityFilter").take(1);
+    console.warn('pouet')!
   }
 
   ngOnInit() {
