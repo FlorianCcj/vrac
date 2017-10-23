@@ -1,26 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {HttpModule} from '@angular/http';
-import {todos, TodosState} from './store/todos/todos.reducer'
-import {visibilityFilter} from './store/todos/visibility-filter.reducer'
-import {TodosEffects} from './store/todos/todos.effects';
-import {StoreModule, ActionReducerMap} from '@ngrx/store';
+import {StoreModule} from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import {TodosService} from './services/todos.service'
-
-export interface AppState {
-  todos: TodosState,
-	visibilityFilter: any
-}
-
-const effects = [
-	TodosEffects
-];
-
-const reducers: ActionReducerMap<AppState> = {
-	todos,
-  visibilityFilter
-} 
+import {TodosService} from './services/todos.service';
+import {SystemsInfosService} from './services/system-s-infos.service';
+import {effects, reducers} from './store/store.selectors' 
 
 @NgModule({
   imports: [
@@ -31,6 +16,7 @@ const reducers: ActionReducerMap<AppState> = {
   ],
   providers : [
     TodosService,
+    SystemsInfosService
 	],
   declarations: []
 })

@@ -1,0 +1,28 @@
+import { Component, OnInit, Input, ChangeDetectionStrategy, EventEmitter, Output } from '@angular/core';
+import {TodoModel} from '../../../models/todo.model'
+
+@Component({
+  selector: 'app-todo-list',
+  templateUrl: './todo-list.component.html',
+  styleUrls: ['./todo-list.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class TodoListComponent implements OnInit {
+  @Input() todos;
+  @Output() removeClicked = new EventEmitter<TodoModel>();
+  @Output() archiveClicked = new EventEmitter<TodoModel>();
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+  removeTodo(todo) {
+  	this.removeClicked.emit(todo);
+  }
+
+  archiveTodo(todo) {
+  	this.archiveClicked.emit(todo);
+  }
+
+}
