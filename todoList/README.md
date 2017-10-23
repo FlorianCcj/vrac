@@ -6,6 +6,12 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
  * inspirer de l'architecture fichier du theme angle
  * suivi du tuto [Medium - Front end hacking](https://medium.com/front-end-hacking/managing-state-in-angular-apps-with-ngrx-store-and-ngrx-effects-part-1-a878addba622)
+ * passage de css a scss : renomer tout les fichiers, `ng set default.styleExt=scss`, (ou eb globall `ng set defaults.styleExt=scss --global`)
+ * ajout de bootstrap : dans `/src/styles.scss`, `$enable-flex: true;
+@import "../node_modules/bootstrap/scss/bootstrap";`
+ * ajout de font-awesome 1 dans `/src/assets/styles/_variables.scss` `$fa-font-path: '../../../node_modules/font-awesome/scss/font-awesome'`
+ * ajout de font-awesome 2 dans `/src/styles.scss` `@import './assets/styles/variables'; @import '../node_modules/font-awesome/scss/font-awesome';` (non fonctionnel, import en css)
+  * ajout de font-awesome 2 dans `/src/styles.scss` `@import './assets/styles/variables'; @import '../node_modules/font-awesome/css/font-awesome.css';` (non fonctionnel, import en css)
 
 ## Development server
 
