@@ -10,7 +10,7 @@ import 'rxjs/add/operator/take';
 @Component({
   selector: 'app-todo-index',
   templateUrl: './todo-index.component.html',
-  styleUrls: ['./todo-index.component.css']
+  styleUrls: ['./todo-index.component.scss']
 })
 export class TodoIndexComponent implements OnInit {
 

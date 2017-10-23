@@ -6,7 +6,7 @@ import { Store } from "@ngrx/store";
 @Component({
   selector: 'app-system-s-infos',
   templateUrl: './system-s-infos.component.html',
-  styleUrls: ['./system-s-infos.component.css']
+  styleUrls: ['./system-s-infos.component.scss']
 })
 export class SystemSInfosComponent implements OnInit {
 

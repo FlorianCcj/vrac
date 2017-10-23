@@ -3,7 +3,7 @@ import { Component, Input, ChangeDetectionStrategy, Output, EventEmitter } from 
 @Component({
   selector: 'app-todo-detail',
   templateUrl: './todo-detail.component.html',
-  styleUrls: ['./todo-detail.component.css'],
+  styleUrls: ['./todo-detail.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TodoDetailComponent {
