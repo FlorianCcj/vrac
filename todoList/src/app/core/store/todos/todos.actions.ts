@@ -51,6 +51,7 @@ export class ArchiveTodo implements Action {
 
 export class ToggleTodo implements Action {
   readonly type = TOGGLE_TODO;
+  constructor(public payload: any) {}
 }
 
 export class EditTodo implements Action {

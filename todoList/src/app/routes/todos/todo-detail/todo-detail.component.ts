@@ -1,4 +1,5 @@
 import { Component, Input, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
+import {TodoModel} from '../../../models/todo.model'
 
 @Component({
   selector: 'app-todo-detail',
@@ -9,7 +10,8 @@ import { Component, Input, ChangeDetectionStrategy, Output, EventEmitter } from 
 export class TodoDetailComponent {
 	@Input() todo;
   @Output() removeClicked = new EventEmitter<any>();
-	@Output() archiveClicked = new EventEmitter<any>();
+  @Output() archiveClicked = new EventEmitter<any>();
+	@Output() toggleClicked = new EventEmitter<any>();
 	
   constructor() { }
 
@@ -19,6 +21,10 @@ export class TodoDetailComponent {
 
   archive(todo: any) {
   	this.archiveClicked.emit(todo);
+  }
+
+  toggleTodo(todo: any) {
+    this.toggleClicked.emit({...todo, completed: !todo.completed});
   }
 
 }

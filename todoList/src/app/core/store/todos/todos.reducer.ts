@@ -36,7 +36,7 @@ export function todosReducer( state = initialState, action ): TodosState {
         archive: [...state.archive, action.payload]
       });
     case TodosActions.TOGGLE_TODO:
-      return {...state}; // todo: a faire
+      return {...state, data: [...state.data.filter((todo) => todo.id !== action.payload.id), action.payload]};
     case TodosActions.EDIT_TODO:
       return {...state, data: [
         ...state.data.filter((todo) => todo.id !== action.payload.id),

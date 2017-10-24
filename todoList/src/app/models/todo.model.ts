@@ -1,18 +1,17 @@
 export class TodoModel {
-    done: Boolean;
-    title: string;
+  completed: boolean;
+  title: string;
+  private textProp: string;
 
-    text: String;
-    // private _text: String;
-    // get text() {
-    //     return this._text;
-    // }
-    // set text(value: String) {
-    //    this._text = value.trim();
-    // }
+  get text() {
+    return this.textProp;
+  }
+  set text(value: String) {
+    this.textProp = value.trim();
+  }
 
-    constructor(text: String) {
-        this.done = false;
-        this.text = text.trim();
-    }
+  constructor(text: String) {
+    this.completed = false;
+    this.textProp = text.trim();
+  }
 }

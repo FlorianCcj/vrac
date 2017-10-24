@@ -1,10 +1,16 @@
 <!-- WIP -->
+{{todo | json}}
 <p>
-	{{todo.title}}
-	<button (click)="remove(todo)">
-		supprimer
-	</button>
-	<button (click)="archive(todo)">
-		archiver
-	</button>
+	<span (click)="toggleTodo(todo)" class="strike" 
+		[class.todo-done]="todo.completed" 
+		[ngClass]="{
+			'todo-undone': !todo.completed,
+			'todo-done': todo.completed
+		}">
+		<input type="checkbox">
+		{{todo.title}}
+	</span>
+	<i (click)="remove(todo)" class="fa fa-times" title="supprimer"></i>
+		<i (click)="archive(todo)" class="fa fa-folder-open" title="archiver">
+	</i>
 </p>

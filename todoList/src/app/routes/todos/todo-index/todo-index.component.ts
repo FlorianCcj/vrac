@@ -46,6 +46,10 @@ export class TodoIndexComponent implements OnInit {
     this.store.dispatch(new TodosActions.ArchiveTodo(todo));
   }
 
+  toggleTodo( todo ) {
+    this.store.dispatch(new TodosActions.ToggleTodo(todo));
+  }
+
   changeFilter( filter ) {
     this.store.dispatch(new FilterVisibilityAction.SetVisibilityFilter(filter));
     this.store.dispatch(new TodosActions.GetTodos());
