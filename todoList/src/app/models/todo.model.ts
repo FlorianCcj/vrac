@@ -2,6 +2,7 @@ export class TodoModel {
   completed: boolean;
   title: string;
   private textProp: string;
+  archive: boolean;
 
   get text() {
     return this.textProp;

@@ -13,7 +13,6 @@ export const REMOVE_TODO = "REMOVE_TODO";
 export const ARCHIVE_TODO = "ARCHIVE_TODO";
 export const TOGGLE_TODO = "TOGGLE_TODO";
 export const EDIT_TODO = "EDIT_TODO";
-export const FILTER_TODO = "FILTER_TODO";
 
 export class GetTodos implements Action {
   readonly type = GET_TODOS;
@@ -56,10 +55,6 @@ export class ToggleTodo implements Action {
 
 export class EditTodo implements Action {
   readonly type = EDIT_TODO;
-}
-
-export class FilterTodo implements Action {
-  readonly type = FILTER_TODO;
 }
 
 

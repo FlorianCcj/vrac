@@ -42,8 +42,6 @@ export function todosReducer( state = initialState, action ): TodosState {
         ...state.data.filter((todo) => todo.id !== action.payload.id),
         action.payload
         ]};
-    case TodosActions.FILTER_TODO:
-      return {...state, data: state.data.filter((todo) => todo.title.match(action.payload) || todo.text.match(action.payload))};
     default:
       return {...state};
   }
