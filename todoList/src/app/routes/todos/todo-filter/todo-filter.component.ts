@@ -20,6 +20,4 @@ export class TodoFilterComponent {
   set active( val ) {
     this.filter.setValue(val);
   }
-
-
 }
