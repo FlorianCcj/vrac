@@ -24,5 +24,11 @@ module.exports = {
   ],
   build: {
     vendor: ["axios"]
+  },
+  plugins: [
+    "~/plugins/filters"
+  ],
+  router: {
+    linkActiveClass: "something-else"
   }
 }
