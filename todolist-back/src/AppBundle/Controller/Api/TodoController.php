@@ -5,7 +5,10 @@ namespace AppBundle\Controller\Api;
 use AppBundle\Entity\Todo;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
  * Todo controller.
@@ -25,17 +28,14 @@ class TodoController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $todos = $em->getRepository('AppBundle:Todo')->findAll();
-
-        return $this->render('todo/index.html.twig', array(
-            'todos' => $todos,
-        ));
+        return new JsonResponse($todos);
     }
 
     /**
      * Creates a new todo entity.
      *
      * @Route("/new", name="todos_new")
-     * @Method({"GET", "POST"})
+     * @Method({"POST"})
      */
     public function newAction(Request $request)
     {
