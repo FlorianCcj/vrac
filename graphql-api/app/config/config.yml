@@ -1,5 +1,3 @@
-graphql: # [GRAPHQL]
-    schema_class: "AppBundle\\GraphQL\\Schema"
 imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
